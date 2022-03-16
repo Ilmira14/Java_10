@@ -4,8 +4,14 @@ import ru.netology.domain.MovieItem;
 
 public class MoviePosterManager {
 
-    private MovieItem[] items = new MovieItem[0];
     private int maxLength = 10;
+
+    public MoviePosterManager() {}
+    public MoviePosterManager(int maxLength) {
+        this.maxLength = maxLength;
+    }
+
+    private MovieItem[] items = new MovieItem[0];
 
     public void add(MovieItem item) {
         int length = items.length + 1;
@@ -23,7 +29,6 @@ public class MoviePosterManager {
     }
 
     public MovieItem[] getLastMovies() {
-
         int resultLength;
         if (items.length < maxLength) {
             resultLength = items.length;
