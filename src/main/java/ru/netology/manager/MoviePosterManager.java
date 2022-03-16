@@ -5,13 +5,14 @@ import ru.netology.domain.MovieItem;
 public class MoviePosterManager {
 
     private int maxLength = 10;
+    private MovieItem[] items = new MovieItem[0];
 
-    public MoviePosterManager() {}
+    public MoviePosterManager() {
+    }
+
     public MoviePosterManager(int maxLength) {
         this.maxLength = maxLength;
     }
-
-    private MovieItem[] items = new MovieItem[0];
 
     public void add(MovieItem item) {
         int length = items.length + 1;
@@ -39,7 +40,7 @@ public class MoviePosterManager {
         MovieItem[] result = new MovieItem[resultLength];
         int index = 0;
         for (int i = 0; i < resultLength; i++) {
-            index = resultLength - i - 1;
+            index = items.length - i - 1;
             result[i] = items[index];
         }
         return result;
